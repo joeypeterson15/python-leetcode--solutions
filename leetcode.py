@@ -193,3 +193,28 @@
 #         return ans
 
 
+
+
+# 257. Binary Tree Paths
+# Given the root of a binary tree, return all root-to-leaf paths in any order.
+
+# class Solution:
+#     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+#         if not root:
+#             return []
+
+#         def helper(node, path = ""):
+#             if not node:
+#                 return
+#             path += f"{node.val}"
+#             if not node.left and not node.right:
+#                 paths.append(path)
+#             else:
+#                 path += "->"
+#                 helper(node.left, path)
+#                 helper(node.right, path)
+
+
+#         paths = []
+#         helper(root)
+#         return paths
