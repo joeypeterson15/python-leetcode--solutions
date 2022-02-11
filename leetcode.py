@@ -170,6 +170,13 @@
 #                         visited.add((dr + row, dc + col))
 #                         queue.append((dr + row, dc + col))
 
+#         for r in range(rows):
+#             for c in range(cols):
+#                 if grid[r][c] == "1" and (r,c) not in visited:
+#                     islands += 1
+#                     bfs(r,c)
+#         return islands
+
 
 
 # 314. Binary Tree Vertical Order Traversal
@@ -206,7 +213,7 @@
 #         def helper(node, path = ""):
 #             if not node:
 #                 return
-#             path += f"{node.val}" 
+#             path += f"{node.val}"
 #             if not node.left and not node.right:
 #                 paths.append(path)
 #             else:
@@ -218,3 +225,109 @@
 #         paths = []
 #         helper(root)
 #         return paths
+
+
+# 199. Binary Tree Right Side View
+# Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+# class Solution:
+#     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+#         if root == None:
+#             return []
+#         rightside = []
+#         nextLevel = collections.deque([root])
+
+#         while nextLevel:
+#             currentLevel = nextLevel
+#             nextLevel = collections.deque()
+
+#             while currentLevel:
+# #                 popping from the left gives the left most. So the last node we pop should be the right one.
+#                 node = currentLevel.popleft()
+#                 if node.left:
+#                     nextLevel.append(node.left)
+#                 if node.right:
+#                     nextLevel.append(node.right)
+#             rightside.append(node.val)
+
+#         return rightside
+
+
+
+# 286. Walls and Gates
+# You are given an m x n grid rooms initialized with these three possible values:
+# > -1 A wall or an obstacle.
+# > 0 A gate.
+# > INF Infinity means an empty room. We use the value 231 - 1 = 2147483647 to represent INF as you may assume that the distance to a gate is less than 2147483647.
+
+# Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, it should be filled with INF.
+
+# class Solution:
+#     def wallsAndGates(self, rooms: List[List[int]]) -> None:
+#         if not rooms:
+#             return
+
+#         # helpers to identify direction and empty rooms
+#         DIRECTIONS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+#         EMPTY = 2147483647
+
+#         # trackers for height and width of the matrix
+#         h = len(rooms)
+#         w = len(rooms[0])
+
+#         # find all gates in the matrix and add them to the queue
+#         q = []
+#         for i in range(h):
+#             for j in range(w):
+#                 if rooms[i][j] == 0:
+#                     q.append((i, j))
+
+#         # BFS
+#         for row, col in q:
+#             # Specify the distance of all the neighbors of are current
+#             # element coming out of the queue.
+#             dist = rooms[row][col] + 1
+
+#             # Check each direction from our current position
+#             for dy, dx in DIRECTIONS:
+#                 r = row + dy
+#                 c = col + dx
+
+#                 # if our row and column are within the bounds of our matrix AND the room is currently empty,
+#                 # set the distance to the value of that position in the matrix.
+#                 if 0 <= r < h and 0 <= c < w and rooms[r][c] == EMPTY:
+#                     rooms[r][c] = dist
+#                     q.append((r, c))
+
+
+# 116. Populating Next Right Pointers in Each Node
+# You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:
+# Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+# Initially, all next pointers are set to NULL.
+
+# class Solution:
+#     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+#         if root == []:
+#             return root
+
+#         levels = []
+
+#         def helper(node, level = 0):
+#             if not node:
+#                 return
+
+#             if level == len(levels):
+#                 levels.append([])
+
+#             levels[level].append(node)
+
+#             helper(node.left, level + 1)
+#             helper(node.right, level + 1)
+
+#         helper(root)
+
+#         for level in levels:
+#             for i in range(0, len(level) - 1):
+#                 if i < len(level):
+#                     level[i].next = level[i + 1]
+
+#         return root
