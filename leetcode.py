@@ -331,3 +331,39 @@
 #                     level[i].next = level[i + 1]
 
 #         return root
+
+
+
+# 15. 3Sum
+# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+# Notice that the solution set must not contain duplicate triplets.
+
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         nums.sort()
+#         ans = []
+
+#         def addSum(i):
+#             j = i + 1
+#             k = len(nums) - 1
+#             while j < k:
+#                 added = nums[i] + nums[j] + nums[k]
+#                 if added == 0:
+#                     ans.append([nums[i], nums[j], nums[k]])
+#                     j += 1
+#                     k -= 1
+#                     while j < k and nums[j] == nums[j - 1]:
+#                         j += 1
+#                 elif added > 0:
+#                     k -= 1
+#                 else:
+#                     j += 1
+
+#         for i in range(0, len(nums) - 1):
+#             if nums[i] > 0:
+#                 break
+#             if i == 0 or nums[i] != nums[i - 1]:
+#                 addSum(i)
+
+
+#         return ans
