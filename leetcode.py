@@ -381,3 +381,36 @@
 #                 matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i]
 #                 matrix[j][n - 1 - i] = matrix[i][j]
 #                 matrix[i][j] = tmp
+
+
+# Allie Villarreal (she/her) to Everyone (11:43 AM)
+# function getFileExtension(i) {
+#  // i will be a string, but it may not have a file extension.
+#  // return the file extension (with no period) if it has one, otherwise false
+# }
+# Allie Villarreal (she/her) to Everyone (11:44 AM)
+# You have a matrix. You want to get the maximum number of coins. You can change indices of where you take a coin, but it will cost you the difference between the past index and the new index. Example:
+# 1 2 3
+# 1 1 3
+# 1 3 1
+
+# start off at 3. go to the next 3 (lose 0 coins), go to the final 3 (lose 1 coin). = 8
+# Allie Villarreal (she/her) to Everyone (11:45 AM)
+# fetch(temperatureUrl)
+#  .then((response) => {
+#     updateTheFancyTemperatureUI(response.json());
+#  });
+
+# temperatureUrlArray = [
+# "https://.../best-data.json",
+#  "https://.../average-data.json" ,
+#  "https://.../worst-data.json"
+# ];
+
+# Update your app to display the best available temperature.
+
+# assume returns error if no data back?
+
+
+# there is a maze. mouse starts at any position. each intersection has n number of doors and 0 - 5 pieces of cheese.
+# find the path that the mouse has to take the eat the most number of pieces of cheese where each door can lead to a new path. A dead end stops the mouse in its tracks
