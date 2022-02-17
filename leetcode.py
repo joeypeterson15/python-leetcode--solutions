@@ -548,3 +548,51 @@
 #         smallest_island = min(count_size, smallest_island)
 
 #   return smallest_island
+
+
+# 54. Spiral Matrix
+# Given an m x n matrix, return all elements of the matrix in spiral order.
+# class Solution:
+#     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+#         # set of seen values so we do not repeat
+#         visited = set()
+
+#         # number of rows and columns in our matrix
+#         rows, cols = len(matrix), len(matrix[0])
+
+#         # r, c is the starting value
+#         # dr, dc is the starting direction we want
+#         r, c, dr, dc = 0, 0, 0, 1
+
+#         # results array we will continually append to and return
+#         result = []
+
+#         # terminate loop when every cell value has been visited
+#         while len(visited) < rows * cols:
+
+#             # when we are at (r,c), append it to visited set
+#             visited.add((r, c))
+
+#             # append value at (r,c) to results array
+#             result.append(matrix[r][c])
+
+#             # if the next value is a legal value AND something we haven't seen, then visit it
+#             if 0 <= r + dr < rows and 0 <= c + dc < cols and (r+dr, c+dc) not in visited:
+#                 r, c = r + dr, c + dc
+
+#             # otherwise, change directions according to rules
+#             else:
+#                 if (dr, dc) == (0, 1):
+#                     dr, dc = 1, 0
+#                 elif (dr, dc) == (1, 0):
+#                     dr, dc = 0, -1
+#                 elif (dr, dc) == (0, -1):
+#                     dr, dc = -1, 0
+#                 else:
+#                     dr, dc = 0, 1
+
+#                 # don't forget to move after changing directions!
+#                 r, c = r + dr, c + dc
+
+#         # return results array
+#         return result
