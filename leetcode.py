@@ -42,6 +42,7 @@
 
 
 
+# 104. Maximum Depth of Binary Tree
 # Given the root of a binary tree, return its maximum depth.
 
 # A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
@@ -334,6 +335,9 @@
 
 
 
+
+
+
 # 15. 3Sum
 # Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 # Notice that the solution set must not contain duplicate triplets.
@@ -369,6 +373,9 @@
 #         return ans
 
 
+
+
+
 # 48. Rotate Image
 # You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 # class Solution:
@@ -381,6 +388,12 @@
 #                 matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i]
 #                 matrix[j][n - 1 - i] = matrix[i][j]
 #                 matrix[i][j] = tmp
+
+
+
+
+
+
 
 
 # Allie Villarreal (she/her) to Everyone (11:43 AM)
@@ -414,3 +427,124 @@
 
 # there is a maze. mouse starts at any position. each intersection has n number of doors and 0 - 5 pieces of cheese.
 # find the path that the mouse has to take the eat the most number of pieces of cheese where each door can lead to a new path. A dead end stops the mouse in its tracks
+
+
+
+
+
+
+
+
+# 994. Rotting Oranges
+# You are given an m x n grid where each cell can have one of three values:
+
+# 0 representing an empty cell,
+# 1 representing a fresh orange, or
+# 2 representing a rotten orange.
+# Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
+
+# Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
+
+
+# class Solution:
+#     def orangesRotting(self, grid: List[List[int]]) -> int:
+#         rows = len(grid)
+#         cols = len(grid[0])
+#         FRESH = 1
+#         ROTTEN = 2
+#         DIRECTIONS = [(0 ,1), (0, -1), (1, 0), (-1, 0)]
+#         orangesFresh = 0
+
+#         queue = collections.deque()
+
+#         for r in range(rows):
+#             for c in range(cols):
+#                 if grid[r][c] == ROTTEN:
+#                     queue.append((r,c,))
+#                 if grid[r][c] == FRESH:
+#                     orangesFresh += 1
+
+
+#         queue.append((-5, -5))
+#         minutes = -1
+
+#         while queue:
+#             row,col = queue.popleft()
+#             if row == -5:
+#                 minutes += 1
+#                 if queue:
+#                     queue.append((-5, -5))
+
+#             for dr, dc in DIRECTIONS:
+#                 dx = row + dr
+#                 dy = col + dc
+
+#                 if (
+#                 dx in range(rows) and
+#                 dy in range(cols) and
+#                 grid[dx][dy] == FRESH):
+#                     grid[dx][dy] = ROTTEN
+#                     queue.append((dx, dy))
+#                     orangesFresh -= 1
+#         return minutes if orangesFresh == 0 else -1
+
+
+
+
+# 98. Validate Binary Search Tree
+# Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+# class Solution:
+#     def isValidBST(self, root: TreeNode) -> bool:
+
+#         def validate(node, low=-math.inf, high=math.inf):
+#             # Empty trees are valid BSTs.
+#             if not node:
+#                 return True
+#             # The current node's value must be between low and high.
+#             if node.val <= low or node.val >= high:
+#                 return False
+
+#             # The left and right subtree must also be valid.
+#             return (validate(node.right, node.val, high) and
+#                    validate(node.left, low, node.val))
+
+#         return validate(root)
+
+
+# def minimum_island(grid):
+#   import collections
+#   # pass # todo
+#   rows = len(grid)
+#   cols = len(grid[0])
+#   directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
+#   smallest_island = float('inf')
+#   visited = set()
+
+#   def bfs(r, c):
+#     count = 1
+#     queue = collections.deque()
+#     queue.append((r,c))
+#     visited.add((r,c))
+#     while queue:
+#       row, col = queue.popleft()
+#       for dr, dc in directions:
+#         dx = dr + row
+#         dy = dc + col
+#         if (
+#         dx in range(rows) and
+#         dy in range(cols) and
+#         grid[dx][dy] == 'L'and
+#         (dx, dy) not in visited):
+#           visited.add((dx, dy))
+#           queue.append((dx, dy))
+#           count += 1
+#     return count
+
+
+#   for r in range(rows):
+#     for c in range(cols):
+#       if grid[r][c] == "L" and (r,c) not in visited:
+#         count_size = bfs(r,c)
+#         smallest_island = min(count_size, smallest_island)
+
+#   return smallest_island
