@@ -695,6 +695,19 @@
 
 
 
+# structy ==> tree sum
+# Write a function, tree_sum, that takes in the root of a binary tree that contains number values.
+# The function should return the total sum of all values in the tree.
+
+# def tree_sum(root):
+#   # pass # todo
+#     if not root:
+#       return 0
+#     return root.val + tree_sum(root.left) + tree_sum(root.right)
+
+
+
+
 # strcuty ==> tree includes
 # Write a function, tree_includes, that takes in the root of a binary tree and a target value.
 # The function should return a boolean indicating whether or not the value is contained in the tree.
