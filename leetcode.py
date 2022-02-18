@@ -689,3 +689,20 @@
 #         else:
 #             m2 = merged[((n + m) // 2) - 1]
 #             return int((m1 + m2) / 2)
+
+
+
+
+
+# Structy ==> max root to leaf path sum
+# Write a function, max_path_sum, that takes in the root of a binary tree that contains number values.
+# The function should return the maximum sum of any root to leaf path within the tree.
+
+# def max_path_sum(root):
+#   # pass # todo
+#   if not root:
+#     return -float('inf')
+
+#   if not root.left and not root.right:
+#     return root.val
+#   return root.val + max(max_path_sum(root.left), max_path_sum(root.right))
