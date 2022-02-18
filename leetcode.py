@@ -810,3 +810,36 @@
 #     c += 1
 
 #   return head
+
+
+# ZIPPER LIST
+# Write a function, zipper_lists, that takes in the head of two linked lists as arguments.
+# The function should zipper the two lists together into single linked list by alternating nodes.
+# If one of the linked lists is longer than the other, the resulting list should terminate with the remaining nodes.
+# The function should return the head of the zippered linked list.
+# Do this in-place, by mutating the original Nodes.
+
+# def zipper_lists(head_1, head_2):
+#   # pass # todo
+#   new_head = head_1
+#   c1 = head_1.next
+#   c2 = head_2
+#   count = 0
+
+#   while c1 and c2:
+#     if count % 2 == 0:
+#       new_head.next = c2
+#       c2 = c2.next
+#     else:
+#       new_head.next = c1
+#       c1 = c1.next
+
+#     count += 1
+#     new_head = new_head.next
+
+#   if c1:
+#     new_head.next = c1
+#   if c2:
+#     new_head.next = c2
+
+#   return head_1
