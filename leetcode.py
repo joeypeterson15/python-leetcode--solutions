@@ -843,3 +843,41 @@
 #     new_head.next = c2
 
 #   return head_1
+
+
+
+
+
+# minimum island
+# Write a function, minimum_island, that takes in a grid containing Ws and Ls. W represents water and L represents land.
+# The function should return the size of the smallest island.
+# An island is a vertically or horizontally connected region of land.
+
+# def minimum_island(grid):
+#   import collections
+#   # pass # todo
+#   rows = len(grid)
+#   cols = len(grid[0])
+#   directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
+#   smallest_island = float('inf')
+#   visited = set()
+
+#   def bfs(r, c):
+#     count = 1
+#     queue = collections.deque()
+#     queue.append((r,c))
+#     visited.add((r,c))
+#     while queue:
+#       row, col = queue.popleft()
+#       for dr, dc in directions:
+#         dx = dr + row
+#         dy = dc + col
+#         if (
+#         dx in range(rows) and
+#         dy in range(cols) and
+#         grid[dx][dy] == 'L'and
+#         (dx, dy) not in visited):
+#           visited.add((dx, dy))
+#           queue.append((dx, dy))
+#           count += 1
+#     return count
