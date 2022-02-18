@@ -694,6 +694,27 @@
 
 
 
+
+
+# Structy ==> tree min value
+# Write a function, tree_min_value, that takes in the root of a binary tree that contains number values.
+# The function should return the minimum value within the tree.
+
+# def tree_min_value(root):
+#   # pass
+#   if not root:
+#     return float('inf')
+#   if not root.left and not root.right:
+#     return root.val
+
+#   return min(root.val, min(tree_min_value(root.left), tree_min_value(root.right)))
+
+
+
+
+
+
+
 # Structy ==> max root to leaf path sum
 # Write a function, max_path_sum, that takes in the root of a binary tree that contains number values.
 # The function should return the maximum sum of any root to leaf path within the tree.
