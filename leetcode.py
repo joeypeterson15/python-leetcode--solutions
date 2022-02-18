@@ -647,3 +647,45 @@
 
 
 #         return res
+
+
+
+# 4. Median of Two Sorted Arrays
+# Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+# class Solution:
+#     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+#         m = len(nums1)
+#         n = len(nums2)
+
+#         # merged = [range(n + m)]
+#         merged = [0 for _ in range(n + m)]
+
+#         i = 0
+#         j = 0
+#         k = 0
+
+#         while i < m and j < n:
+#             if nums1[i] < nums2[j]:
+#                 merged[k] = nums1[i]
+#                 i += 1
+#                 k += 1
+#             else:
+#                 merged[k] = nums2[j]
+#                 j += 1
+#                 k += 1
+#         while i < m:
+#             merged[k] = nums1[i]
+#             k += 1
+#             i += 1
+#         while j < n:
+#             merged[k] = nums2[j]
+#             k+= 1
+#             j += 1
+
+
+#         m1 = merged[((n + m) // 2)]
+#         if ((n + m) % 2) == 1:
+#             return int(m1)
+#         else:
+#             m2 = merged[((n + m) // 2) - 1]
+#             return int((m1 + m2) / 2)
