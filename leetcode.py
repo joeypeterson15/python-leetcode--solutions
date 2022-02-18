@@ -784,3 +784,29 @@
 #   if not root.left and not root.right:
 #     return root.val
 #   return root.val + max(max_path_sum(root.left), max_path_sum(root.right))
+
+
+
+# reverse list
+
+# Write a function, reverse_list, that takes in the head of a linked list as an argument.
+# The function should reverse the order of the nodes in the linked list in-place and return the new head of the reversed linked list.
+
+# def reverse_list(head):
+#   # pass # todo
+#   vals = []
+#   curr = head
+#   while curr:
+#     vals.append(curr.val)
+#     curr = curr.next
+
+
+
+#   curr = head
+#   c = 1
+#   while curr:
+#     curr.val = vals[-c]
+#     curr = curr.next
+#     c += 1
+
+#   return head
