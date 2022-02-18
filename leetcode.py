@@ -596,3 +596,54 @@
 
 #         # return results array
 #         return result
+
+
+# 59. Spiral Matrix II
+# Given a positive integer n, generate an n x n matrix filled with elements from 1 to n2 in spiral order.
+# class Solution:
+#     def generateMatrix(self, n: int) -> List[List[int]]:
+#         # import numpy
+#         # res = numpy.zeros((n,n))
+#         visited = set()
+
+#         # res = [[range(n)] for _ in range(n)]
+#         res = list([[0]*n]*n)
+
+
+#         s = 1
+
+#         r = 0
+#         c = 0
+#         dr = 0
+#         dc = 1
+
+#         while s <= (n ** 2):
+
+#             visited.add((r,c))
+
+#             res[r][c] = s
+
+#             x = r + dr
+#             y = c + dc
+
+#             if (x in range(n) and y in range(n) and (x,y) not in visited):
+#                 r = x
+#                 c = y
+
+#             else:
+#                 if (dr, dc) == (0, 1):
+#                     dr, dc = 1, 0
+#                 elif (dr, dc) == (1, 0):
+#                     dr, dc = 0, -1
+#                 elif (dr, dc) == (0, -1):
+#                     dr, dc = -1, 0
+#                 else:
+#                     dr, dc = 0, 1
+
+#                 r = r + dr
+#                 c = c + dc
+
+#             s += 1
+
+
+#         return res
