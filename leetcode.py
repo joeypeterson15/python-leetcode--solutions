@@ -856,28 +856,61 @@
 # def minimum_island(grid):
 #   import collections
 #   # pass # todo
+
+#   visited = set()
+#   smallest_island = float('inf')
 #   rows = len(grid)
 #   cols = len(grid[0])
-#   directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
-#   smallest_island = float('inf')
-#   visited = set()
+#   dir = [(0,1), (0,-1), (1,0), (-1,0)]
 
-#   def bfs(r, c):
-#     count = 1
-#     queue = collections.deque()
-#     queue.append((r,c))
+#   def bfs(r,c):
+#     q = collections.deque()
+#     q.append((r,c))
 #     visited.add((r,c))
-#     while queue:
-#       row, col = queue.popleft()
-#       for dr, dc in directions:
-#         dx = dr + row
-#         dy = dc + col
-#         if (
-#         dx in range(rows) and
-#         dy in range(cols) and
-#         grid[dx][dy] == 'L'and
-#         (dx, dy) not in visited):
-#           visited.add((dx, dy))
-#           queue.append((dx, dy))
+#     count = 1
+#     while q:
+#       row, col = q.popleft()
+#       for dr, dc in dir:
+#         dx = row + dr
+#         dy = col + dc
+#         if (dx in range(rows) and dy in range(cols) and (dx, dy) not in visited and grid[dx][dy] == 'L'):
 #           count += 1
+#           q.append((dx, dy))
+#           visited.add((dx, dy))
+
 #     return count
+
+
+#   for r in range(rows):
+#     for c in range(cols):
+#       if grid[r][c] == 'L' and (r,c) not in visited:
+#         island_size = bfs(r,c)
+#         smallest_island = min(smallest_island, island_size)
+
+#   return smallest_island
+
+
+
+# tribonacci sequence
+# Write a function tribonacci that takes in a number argument, n, and returns the n-th number of the Tribonacci sequence.
+# The 0-th and 1-st numbers of the sequence are both 0.
+# The 2-nd number of the sequence is 1.
+# To generate further numbers of the sequence, calculate the sum of previous three numbers.
+# Solve this recursively.
+
+# def tribonacci(n):
+#   tracker = {}
+#   return helper(n, tracker)
+
+# def helper(n, tracker):
+
+#   if n == 0 or n==1:
+#     return 0
+#   if n == 2:
+#     return 1
+
+#   if n in tracker:
+#     return tracker[n]
+
+#   tracker[n] = helper(n - 1, tracker) + helper(n - 2, tracker) + helper(n - 3, tracker)
+#   return tracker[n]
