@@ -963,3 +963,33 @@
 #             return node
 
 #         return helper(0, len(vals) - 1)
+
+
+
+# 515. Find Largest Value in Each Tree Row
+# Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
+
+# class Solution:
+#     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
+
+#         levels = []
+
+#         def helper(node, level = 0):
+
+#             if not node:
+#                 return
+
+#             if len(levels) == level:
+#                 levels.append([])
+
+#             levels[level].append(node.val)
+
+#             helper(node.left, level + 1)
+#             helper(node.right, level + 1)
+
+#         helper(root)
+
+#         for i in range(len(levels)):
+#             levels[i] = max(levels[i])
+
+#         return levels
