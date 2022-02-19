@@ -1086,5 +1086,9 @@
 #                         count += 1
 #                         if count <= k:
 #                             queue.append((dr, dc))
+#                             if grid[dr][dc] != 1:
+#                                 grid[dr][dc] = min(grid[dr][dc], distance)
+#                             else:
+#                                 grid[dr][dc] = distance
 
 #         return -1
