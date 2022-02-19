@@ -993,3 +993,98 @@
 #             levels[i] = max(levels[i])
 
 #         return levels
+
+
+
+
+# 1730. Shortest Path to Get Food
+# You are starving and you want to eat food as quickly as possible. You want to find the shortest path to arrive at any food cell.
+
+# class Solution:
+#     def getFood(self, grid: List[List[str]]) -> int:
+
+#         rows = len(grid)
+#         cols = len(grid[0])
+#         directions = [(-1, 0), (1, 0), (0, 1), (0, -1)]
+#         queue = collections.deque()
+
+#         for r in range(rows):
+#             for c in range(cols):
+#                 if grid[r][c] == '#':
+#                     queue.append((r,c))
+#                     grid[r][c] = 0
+
+#         distance = 0
+#         while queue:
+#             r,c = queue.popleft()
+
+#             for dr, dc in directions:
+#                 dx = dr + r
+#                 dy = dc + c
+
+#                 if dx in range(rows) and dy in range(cols):
+#                     if grid[dx][dy] == 'O':
+#                         distance = grid[r][c] + 1
+#                         grid[dx][dy] = distance
+#                         queue.append((dx,dy))
+
+#                     if grid[dx][dy] == '*':
+#                         return grid[r][c] + 1
+#         return -1
+
+
+
+
+
+# 1293. Shortest Path in a Grid with Obstacles Elimination
+# You are given an m x n integer matrix grid where each cell is either 0 (empty) or 1 (obstacle).
+# You can move up, down, left, or right from and to an empty cell in one step.
+# Return the minimum number of steps to walk from the upper left corner (0, 0)
+# to the lower right corner (m - 1, n - 1) given that you can eliminate at most k obstacles.
+# If it is not possible to find such walk return -1.
+
+# class Solution:
+#     def shortestPath(self, grid: List[List[int]], k: int) -> int:
+
+#         rows = len(grid)
+#         cols = len(grid[0])
+#         if rows == 1 and cols == 1:
+#             return 0
+
+#         obstacles = set()
+#         visited = set()
+#         directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
+
+#         for r in range(rows):
+#             for c in range(cols):
+#                 if grid[r][c] == 1:
+#                     obstacles.add((r,c))
+
+#         queue = collections.deque()
+#         queue.append((0, 0))
+#         distance = 0
+#         count = 0
+#         while queue:
+#             row, col = queue.popleft()
+#             visited.add((row, col))
+#             for r, c in directions:
+#                 dr = row + r
+#                 dc = col + c
+#                 if dr in range(rows) and dc in range(cols) and (dr, dc) not in visited:
+
+#                     distance = grid[row][col] + 1
+
+#                     if dr == (rows - 1) and dc == (cols - 1):
+#                         return distance
+
+
+#                     if grid[dr][dc] == 0:
+#                         grid[dr][dc] = distance
+#                         queue.append((dr, dc))
+
+#                     if (dr, dc) in obstacles:
+#                         count += 1
+#                         if count <= k:
+#                             queue.append((dr, dc))
+
+#         return -1
