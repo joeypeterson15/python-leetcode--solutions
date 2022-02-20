@@ -1092,3 +1092,32 @@
 #                                 grid[dr][dc] = distance
 
 #         return -1
+
+
+# 103. Binary Tree Zigzag Level Order Traversal
+# Given the root of a binary tree, return the zigzag level order traversal of its nodes' values.
+# (i.e., from left to right, then right to left for the next level and alternate between).
+# class Solution:
+#     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+
+#         def helper(node, level = 0):
+#             if not node:
+#                 return
+
+#             if level == len(levels):
+#                 levels.append([])
+
+#             levels[level].append(node.val)
+
+#             helper(node.left, level + 1)
+#             helper(node.right, level + 1)
+
+#         levels = []
+#         helper(root)
+
+#         for i in range(len(levels)):
+#             if i % 2 == 1:
+#                 levels[i] = levels[i][::-1]
+
+
+#         return levels
