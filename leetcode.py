@@ -1121,3 +1121,38 @@
 
 
 #         return levels
+
+
+
+# 1602. Find Nearest Right Node in Binary Tree
+# Given the root of a binary tree and a node u in the tree,
+# return the nearest node on the same level that is to the right of u, or return null if u is the rightmost node in its level.
+# class Solution:
+#     def findNearestRightNode(self, root: TreeNode, u: TreeNode) -> Optional[TreeNode]:
+
+#         levels = []
+
+#         def bfs(node, level = 0):
+
+#             if not node:
+#                 return
+
+#             if len(levels) == level:
+#                 levels.append([])
+
+#             # if len(levels[level]) > 0 and levels[level][-1] == u.val:
+#             #     return node
+
+#             levels[level].append(node)
+
+#             bfs(node.left, level + 1)
+#             bfs(node.right, level + 1)
+
+
+#         bfs(root)
+
+#         for i in range(len(levels)):
+#             for j in range(len(levels[i])):
+#                 if levels[i][j] == u and (j + 1) in range(len(levels[i])):
+#                     return levels[i][j + 1]
+#         return None
