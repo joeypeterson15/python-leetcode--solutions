@@ -1223,3 +1223,35 @@
 
 #         helper(root)
 #         return self.ans
+
+
+# 1644. Lowest Common Ancestor of a Binary Tree II
+# Given the root of a binary tree, return the lowest common ancestor (LCA) of two given nodes, p and q. If either node p or q does not exist in the tree, return null. All values of the nodes in the tree are unique.
+
+# According to the definition of LCA on Wikipedia:
+# "The lowest common ancestor of two nodes p and q in a binary tree T is the lowest node
+# that has both p and q as descendants (where we allow a node to be a descendant of itself)".
+# A descendant of a node x is a node y that is on the path from node x to some leaf node.
+
+# class Solution:
+#     def __init__(self):
+#         self.ans = None
+
+#     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+
+#         def helper(node):
+
+#             if not node:
+#                 return False
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+#             mid = node == p or node == q
+
+#             if mid + left + right >= 2:
+#                 self.ans = node
+
+#             return mid or left or right
+
+#         helper(root)
+#         return self.ans
