@@ -1255,3 +1255,20 @@
 
 #         helper(root)
 #         return self.ans
+
+
+
+# 1650. Lowest Common Ancestor of a Binary Tree III
+# Given two nodes of a binary tree p and q, return their lowest common ancestor (LCA).
+# class Solution:
+#     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+#         p_set = set()
+#         while p:
+#             p_set.add(p)
+#             p = p.parent
+
+#         while q:
+#             if q in p_set:
+#                 return q
+#             q = q.parent
+#         return None
