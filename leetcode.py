@@ -1190,3 +1190,36 @@
 #         # We have found the split point, i.e. the LCA node.
 #         else:
 #             return root
+
+
+
+
+
+# 236. Lowest Common Ancestor of a Binary Tree
+# Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+# According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes
+# p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+# class Solution:
+#     def __init__(self):
+#         self.ans = None
+
+#     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+
+
+#         def helper(node):
+
+#             if not node:
+#                 return False
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+#             mid = node == p or node == q
+
+#             if left + right + mid >= 2:
+#                 self.ans = node
+
+#             return mid or left or right
+
+#         helper(root)
+#         return self.ans
