@@ -1344,32 +1344,32 @@
 
 
 
-124. Binary Tree Maximum Path Sum
-A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them.
-A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
-The path sum of a path is the sum of the node's values in the path.
-Given the root of a binary tree, return the maximum path sum of any non-empty path.
-class Solution:
-    def __init__(self):
-        self.max_length = -float('inf')
+# 124. Binary Tree Maximum Path Sum
+# A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them.
+# A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
+# The path sum of a path is the sum of the node's values in the path.
+# Given the root of a binary tree, return the maximum path sum of any non-empty path.
+# class Solution:
+#     def __init__(self):
+#         self.max_length = -float('inf')
 
-    def maxPathSum(self, root: Optional[TreeNode]) -> int:
-
-
-        def dfs(node):
-
-            if not node:
-                return 0
-
-            left_path = max(dfs(node.left), 0)
-            right_path = max(dfs(node.right), 0)
-
-            curr_sum_paths = node.val + left_path + right_path
-
-            self.max_length = max(self.max_length, curr_sum_paths)
-
-            return node.val + max(left_path, right_path)
+#     def maxPathSum(self, root: Optional[TreeNode]) -> int:
 
 
-        dfs(root)
-        return self.max_length
+#         def dfs(node):
+
+#             if not node:
+#                 return 0
+
+#             left_path = max(dfs(node.left), 0)
+#             right_path = max(dfs(node.right), 0)
+
+#             curr_sum_paths = node.val + left_path + right_path
+
+#             self.max_length = max(self.max_length, curr_sum_paths)
+
+#             return node.val + max(left_path, right_path)
+
+
+#         dfs(root)
+#         return self.max_length
