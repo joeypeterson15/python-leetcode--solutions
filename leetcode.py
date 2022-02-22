@@ -1313,3 +1313,31 @@
 
 # #         longest_path(root)
 # #         return diameter
+
+
+
+
+
+
+# 988. Smallest String Starting From Leaf
+# You are given the root of a binary tree where each node has a value in the range [0, 25] representing the letters 'a' to 'z'.
+
+# Return the lexicographically smallest string that starts at a leaf of this tree and ends at the root.
+
+# As a reminder, any shorter prefix of a string is lexicographically smaller.
+# class Solution(object):
+#     def smallestFromLeaf(self, root):
+#         self.ans = "~"
+
+#         def dfs(node, A):
+#             if node:
+#                 A.append(chr(node.val + ord('a')))
+#                 if not node.left and not node.right:
+#                     self.ans = min(self.ans, "".join(reversed(A)))
+
+#                 dfs(node.left, A)
+#                 dfs(node.right, A)
+#                 A.pop()
+
+#         dfs(root, [])
+#         return self.ans
