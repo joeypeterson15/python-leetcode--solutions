@@ -1276,31 +1276,40 @@
 
 
 
+# 129. Sum Root to Leaf Numbers
+# You are given the root of a binary tree containing digits from 0 to 9 only.
 
-# 543. Diameter of Binary Tree
-# Given the root of a binary tree, return the length of the diameter of the tree.
+# Each root-to-leaf path in the tree represents a number.
 
-# The diameter of a binary tree is the length of the longest path between any two nodes in a tree.
-# This path may or may not pass through the root.
-# class Solution:
-#     def diameterOfBinaryTree(self, root: TreeNode) -> int:
-#         diameter = 0
+# For example, the root-to-leaf path 1 -> 2 -> 3 represents the number 123.
+# Return the total sum of all root-to-leaf numbers. Test cases are generated so that the answer will fit in a 32-bit integer.
 
-#         def longest_path(node):
-#             if not node:
-#                 return 0
-#             nonlocal diameter
-#             # recursively find the longest path in
-#             # both left child and right child
-#             left_path = longest_path(node.left)
-#             right_path = longest_path(node.right)
+# A leaf node is a node with no children.
 
-#             # update the diameter if left_path plus right_path is larger
-#             diameter = max(diameter, left_path + right_path)
+# # 543. Diameter of Binary Tree
+# # Given the root of a binary tree, return the length of the diameter of the tree.
 
-#             # return the longest one between left_path and right_path;
-#             # remember to add 1 for the path connecting the node and its parent
-#             return max(left_path, right_path) + 1
+# # The diameter of a binary tree is the length of the longest path between any two nodes in a tree.
+# # This path may or may not pass through the root.
+# # class Solution:
+# #     def diameterOfBinaryTree(self, root: TreeNode) -> int:
+# #         diameter = 0
 
-#         longest_path(root)
-#         return diameter
+# #         def longest_path(node):
+# #             if not node:
+# #                 return 0
+# #             nonlocal diameter
+# #             # recursively find the longest path in
+# #             # both left child and right child
+# #             left_path = longest_path(node.left)
+# #             right_path = longest_path(node.right)
+
+# #             # update the diameter if left_path plus right_path is larger
+# #             diameter = max(diameter, left_path + right_path)
+
+# #             # return the longest one between left_path and right_path;
+# #             # remember to add 1 for the path connecting the node and its parent
+# #             return max(left_path, right_path) + 1
+
+# #         longest_path(root)
+# #         return diameter
