@@ -1373,3 +1373,78 @@
 
 #         dfs(root)
 #         return self.max_length
+
+
+
+# 547. Number of Provinces
+# class Solution:
+#     def findCircleNum(self, isConnected: List[List[int]]) -> int:
+
+#         l = len(isConnected)
+#         provinces = 0
+
+#         adj_list = {i : [] for i in range(l)}
+
+#         for i in range(l):
+#             for j in range(l):
+#                 if isConnected[i][j] == 1:
+#                     adj_list[i].append(j)
+#                     adj_list[j].append(i)
+
+
+#         visited = set()
+
+#         def dfs(n, prev):
+#             if n in visited:
+#                 return
+
+#             visited.add(n)
+
+#             for neighbor in adj_list[n]:
+#                 if neighbor == prev:
+#                     continue
+#                 dfs(neighbor, n)
+
+#         for i in range(l):
+#             if i not in visited:
+#                 provinces += 1
+#                 dfs(i, -1)
+
+#         return provinces
+
+
+
+# 323. Number of Connected Components in an Undirected Graph
+# class Solution:
+#     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+#         if not n:
+#             return 0
+
+#         components = 0
+
+#         adj_list = {i : [] for i in range(n)}
+#         for a,b in edges:
+#             adj_list[a].append(b)
+#             adj_list[b].append(a)
+
+#         visited = set()
+
+#         def dfs(node, prev):
+
+#             if node in visited:
+#                 return
+
+#             visited.add(node)
+
+#             for n in adj_list[node]:
+#                 if n == prev:
+#                     continue
+#                 dfs(n, node)
+
+
+#         for i in range(n):
+#             if i not in visited:
+#                 components += 1
+#                 dfs(i, -1)
+
+#         return components
