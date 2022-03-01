@@ -1448,3 +1448,26 @@
 #                 dfs(i, -1)
 
 #         return components
+
+
+
+
+# 112. Path Sum
+# class Solution:
+#     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+
+#         def dfs(node, sum):
+#             if not node:
+#                 return False
+
+#             sum += node.val
+
+#             if not node.left and not node.right:
+#                 if sum != targetSum:
+#                     return False
+#                 else:
+#                     return True
+
+#             return dfs(node.left, sum) or dfs(node.right, sum)
+
+#         return dfs(root, 0)
