@@ -1526,3 +1526,25 @@
 #                         stack.append(i)
 
 #         return ''.join(stack)
+
+
+# 1026. Maximum Difference Between Node and Ancestor
+# class Solution:
+#     def __init__(self):
+#         self.max_diff = -float('inf')
+#     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+
+#         def helper(node, minim, maxim):
+#             if not node:
+#                 return
+#             if node.val < minim:
+#                 minim = node.val
+#             if node.val > maxim:
+#                 maxim = node.val
+#             self.max_diff = max((maxim - minim), self.max_diff)
+
+#             helper(node.left, minim, maxim)
+#             helper(node.right, minim, maxim)
+
+#         helper(root, float('inf'), -float('inf'))
+#         return self.max_diff
