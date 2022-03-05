@@ -1500,8 +1500,6 @@
 
 # 394. Decode String
 # class Solution:
-#     def __init__(self):
-#         self.ans = ""
 #     def decodeString(self, s: str) -> str:
 
 #         stack = collections.deque()
@@ -1510,25 +1508,21 @@
 #             if c != ']':
 #                 stack.append(c)
 #             else:
-#                 curr_str = ""
+#                 curr_str = ''
 #                 while stack[len(stack) - 1] != '[':
 #                     curr_str += stack.pop()
 
-#                 curr_str = curr_str[::-1]
-
 #                 stack.pop()
+#                 rev = curr_str[::-1]
 
-#                 k = ""
+#                 k = ''
 #                 while stack and stack[len(stack) - 1].isnumeric():
 #                     k += stack.pop()
-
 #                 k = int(k[::-1])
+
 #                 while k > 0:
 #                     k -= 1
-#                     for i in curr_str:
+#                     for i in rev:
 #                         stack.append(i)
-#                     # self.ans += curr_str
-#         res = "".join([item for item in stack])
 
-#         # return self.ans
-#         return res
+#         return ''.join(stack)
