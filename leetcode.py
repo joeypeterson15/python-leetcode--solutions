@@ -1471,3 +1471,64 @@
 #             return dfs(node.left, sum) or dfs(node.right, sum)
 
 #         return dfs(root, 0)
+
+
+# 366. Find Leaves of Binary Tree
+# class Solution:
+#     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+
+#         res = []
+
+#         def getHeight(node):
+#             if not node:
+#                 return -1
+
+#             left_height = getHeight(node.left)
+#             right_height = getHeight(node.right)
+
+#             curr_height = max(left_height, right_height) + 1
+
+#             if curr_height == len(res):
+#                 res.append([])
+
+#             res[curr_height].append(node.val)
+#             return curr_height
+
+#         getHeight(root)
+#         return res
+
+
+394. Decode String
+class Solution:
+    def __init__(self):
+        self.ans = ""
+    def decodeString(self, s: str) -> str:
+
+        stack = collections.deque()
+
+        for c in s:
+            if c != ']':
+                stack.append(c)
+            else:
+                curr_str = ""
+                while stack[len(stack) - 1] != '[':
+                    curr_str += stack.pop()
+
+                curr_str = curr_str[::-1]
+
+                stack.pop()
+
+                k = ""
+                while stack and stack[len(stack) - 1].isnumeric():
+                    k += stack.pop()
+
+                k = int(k[::-1])
+                while k > 0:
+                    k -= 1
+                    for i in curr_str:
+                        stack.append(i)
+                    # self.ans += curr_str
+        res = "".join([item for item in stack])
+
+        # return self.ans
+        return res
