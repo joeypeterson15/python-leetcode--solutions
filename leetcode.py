@@ -1550,24 +1550,73 @@
 #         return self.max_diff
 
 
-652. Find Duplicate Subtrees
-class Solution:
-       def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> list[Optional[TreeNode]]:
+# 652. Find Duplicate Subtrees
+# class Solution:
+#        def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> list[Optional[TreeNode]]:
 
-            result = []
-            paths = defaultdict(int)
+#             result = []
+#             paths = defaultdict(int)
 
-            def get_path(node):
-                if not node:
-                    return "None"
-                else:
-                    path = str(node.val)
-                path += '.' + get_path(node.left)
-                path += '.' + get_path(node.right)
-                paths[path] += 1
-                if paths[path] == 2:
-                    result.append(node)
-                return path
+#             def get_path(node):
+#                 if not node:
+#                     return "None"
+#                 else:
+#                     path = str(node.val)
+#                 path += '.' + get_path(node.left)
+#                 path += '.' + get_path(node.right)
+#                 paths[path] += 1
+#                 if paths[path] == 2:
+#                     result.append(node)
+#                 return path
 
-            get_path(root)
-            return result
+#             get_path(root)
+#             return result
+
+
+# 2096. Step-By-Step Directions From a Binary Tree Node to Another
+# class Solution(object):
+# 	def getDirections(self, root, startValue, destValue):
+# 		"""
+# 		:type root: Optional[TreeNode]
+# 		:type startValue: int
+# 		:type destValue: int
+# 		:rtype: str
+# 		"""
+
+# 		def lca(root):
+# 			if root == None or root.val == startValue or root.val == destValue:
+# 				return root
+
+# 			left = lca(root.left)
+# 			right = lca(root.right)
+
+# 			if left and right:
+# 				return root
+
+# 			return left or right
+
+# 		def dfs(root, value, path):
+# 			if root is None:
+# 				return False
+
+# 			if root.val == value:
+# 				return True
+
+# 			if dfs(root.left, value, path):
+# 				path.append("L")
+# 				return True
+
+# 			elif dfs(root.right, value, path):
+# 				path.append("R")
+# 				return True
+
+# 			return False
+
+# 		root = lca(root)
+# 		start_to_root = []
+# 		dfs(root, startValue, start_to_root)
+
+# 		dest_to_root = []
+# 		dfs(root, destValue, dest_to_root)
+
+# 		return "U" * len(start_to_root) + ''.join(reversed(dest_to_root))
