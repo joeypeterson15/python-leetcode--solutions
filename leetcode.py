@@ -1548,3 +1548,26 @@
 
 #         helper(root, float('inf'), -float('inf'))
 #         return self.max_diff
+
+
+652. Find Duplicate Subtrees
+class Solution:
+       def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> list[Optional[TreeNode]]:
+
+            result = []
+            paths = defaultdict(int)
+
+            def get_path(node):
+                if not node:
+                    return "None"
+                else:
+                    path = str(node.val)
+                path += '.' + get_path(node.left)
+                path += '.' + get_path(node.right)
+                paths[path] += 1
+                if paths[path] == 2:
+                    result.append(node)
+                return path
+
+            get_path(root)
+            return result
