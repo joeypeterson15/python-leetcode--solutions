@@ -1894,3 +1894,28 @@
 #         res = []
 #         max_count = max(hashMap.values())
 #         return [val for val in hashMap.keys() if hashMap[val] == max_count]
+
+
+
+# 1973. Count Nodes Equal to Sum of Descendants
+# class Solution:
+#     def __init__(self):
+#         self.count = 0
+
+#     def equalToDescendants(self, root: Optional[TreeNode]) -> int:
+
+#         def helper(node):
+
+#             if not node:
+#                 return 0
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+
+#             if left + right == node.val:
+#                 self.count += 1
+
+#             return left + right + node.val
+
+#         helper(root)
+#         return self.count
