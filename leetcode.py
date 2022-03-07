@@ -1919,3 +1919,37 @@
 
 #         helper(root)
 #         return self.count
+
+
+
+
+
+# 1120. Maximum Average Subtree
+# class Solution:
+#     def __init__(self):
+#         self.count = 0
+#     def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:
+
+#         def countNodes(node):
+#             if not node:
+#                 return 0
+#             left = countNodes(node.left)
+#             right = countNodes(node.right)
+#             return left + right + 1
+
+#         def findSum(node):
+#             if not node:
+#                 return 0
+
+#             left = findSum(node.left)
+#             right = findSum(node.right)
+
+#             curr_sum = left + right + node.val
+#             num_nodes = countNodes(node)
+#             averages.append(curr_sum/num_nodes)
+
+#             return curr_sum
+
+#         averages = []
+#         findSum(root)
+#         return max(averages)
