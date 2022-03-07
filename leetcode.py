@@ -1792,3 +1792,33 @@
 
 #         # Find BST in left and right subtrees of current nodes.
 #         return max(self.largestBSTSubtree(root.left), self.largestBSTSubtree(root.right))
+
+
+
+# 404. Sum of Left Leaves
+# class Solution:
+#     def __init__(self):
+#         self.sum = 0
+
+#     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+
+#         if not root:
+#             return 0
+
+#         def helper(node, isleft):
+
+#             if not node.left and not node.right:
+#                 if isleft:
+#                     return node.val
+#                 else:
+#                     return 0
+#             total = 0
+
+#             if node.left:
+#                 total += helper(node.left, True)
+#             if node.right:
+#                 total += helper(node.right, False)
+
+#             return total
+
+#         return helper(root, False)
