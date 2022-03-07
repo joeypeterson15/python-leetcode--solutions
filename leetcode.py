@@ -1693,3 +1693,50 @@
 #         dfs(lca_node, q, right_dist)
 
 #         return len(left_dist) + len(right_dist)
+
+
+
+
+
+# 1469. Find All The Lonely Nodes
+# class Solution:
+#     def getLonelyNodes(self, root: Optional[TreeNode]) -> List[int]:
+
+#         def helper(node, res):
+#             if not node:
+#                 return
+
+#             if not node.left and not node.right:
+#                 return
+
+#             if not node.left:
+#                 res.append(node.right.val)
+
+#             if not node.right:
+#                 res.append(node.left.val)
+
+#             helper(node.left, res)
+#             helper(node.right, res)
+
+
+#         result = []
+#         helper(root, result)
+#         return result
+
+
+# 965. Univalued Binary Tree
+# class Solution:
+#     def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
+
+#         uni_val = root.val
+
+#         def helper(node):
+#             if not node:
+#                 return True
+
+#             if node.val != uni_val:
+#                 return False
+
+#             return helper(node.left) and helper(node.right)
+
+#         return helper(root)
