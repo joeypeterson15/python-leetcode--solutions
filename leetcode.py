@@ -1868,3 +1868,29 @@
 #             return False
 
 #         return bfs(root, subRoot)
+
+
+
+
+
+# 508. Most Frequent Subtree Sum
+# class Solution:
+#     def findFrequentTreeSum(self, root: Optional[TreeNode]) -> List[int]:
+
+#         hashMap = collections.defaultdict(int)
+
+#         def helper(node):
+#             if not node:
+#                 return 0
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+
+#             curr_sum = left + right + node.val
+#             hashMap[curr_sum] += 1
+#             return curr_sum
+
+#         helper(root)
+#         res = []
+#         max_count = max(hashMap.values())
+#         return [val for val in hashMap.keys() if hashMap[val] == max_count]
