@@ -1822,3 +1822,49 @@
 #             return total
 
 #         return helper(root, False)
+
+
+
+
+# 572. Subtree of Another Tree
+# class Solution:
+
+#     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+
+
+#         def dfs(curr_node, sub_node):
+#             if not curr_node and not sub_node:
+#                 return True
+
+#             if (not curr_node and sub_node) or (not sub_node and curr_node):
+#                 return False
+
+#             if curr_node.val != sub_node.val:
+#                 return False
+
+#             left = dfs(curr_node.left, sub_node.left)
+#             right = dfs(curr_node.right, sub_node.right)
+#             return left and right
+
+
+#         def bfs(node, subNode):
+#             if not node:
+#                 return False
+
+#             queue = collections.deque()
+#             queue.append(node)
+
+#             while queue:
+#                 curr_node = queue.popleft()
+#                 if curr_node.val == subNode.val:
+#                     isSame = dfs(curr_node, subNode)
+#                     if isSame:
+#                         return True
+#                 if curr_node.left:
+#                     queue.append(curr_node.left)
+#                 if curr_node.right:
+#                     queue.append(curr_node.right)
+
+#             return False
+
+#         return bfs(root, subRoot)
