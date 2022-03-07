@@ -1620,3 +1620,25 @@
 # 		dfs(root, destValue, dest_to_root)
 
 # 		return "U" * len(start_to_root) + ''.join(reversed(dest_to_root))
+
+
+# Lowest Common Ancestor IV
+# class Solution:
+#     def lowestCommonAncestor(self, root: 'TreeNode', nodes: 'List[TreeNode]') -> 'TreeNode':
+
+#         def helper(node):
+#             if not node:
+#                 return None
+#             for n in nodes:
+#                 if n.val == node.val:
+#                     return node
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+
+#             if left and right:
+#                 return node
+
+#             return left or right
+
+#         return helper(root)
