@@ -1584,7 +1584,10 @@
 # 		"""
 
 # 		def lca(root):
-# 			if root == None or root.val == startValue or root.val == destValue:
+# 			if root == None:
+#               return None
+#
+#           if root.val == startValue or root.val == destValue:
 # 				return root
 
 # 			left = lca(root.left)
@@ -1642,3 +1645,51 @@
 #             return left or right
 
 #         return helper(root)
+
+
+# 1740. Find Distance in a Binary Tree
+# class Solution:
+#     def findDistance(self, root: Optional[TreeNode], p: int, q: int) -> int:
+
+#         def lca(node):
+#             if not node:
+#                 return None
+
+#             if node.val == p or node.val == q:
+#                 return node
+
+#             left = lca(node.left)
+#             right = lca(node.right)
+
+#             if left and right:
+#                 return node
+
+#             return left or right
+
+
+#         def dfs(node, target, distance):
+#             if not node:
+#                 return False
+#             if node.val == target:
+#                 return True
+
+#             if dfs(node.left, target, distance):
+#                 distance.append(node.val)
+#                 return True
+
+#             if dfs(node.right,target, distance):
+#                 distance.append(node.val)
+#                 return True
+
+#             return False
+
+
+#         lca_node = lca(root)
+
+#         left_dist = []
+#         dfs(lca_node, p, left_dist)
+
+#         right_dist = []
+#         dfs(lca_node, q, right_dist)
+
+#         return len(left_dist) + len(right_dist)
