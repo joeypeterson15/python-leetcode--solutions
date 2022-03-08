@@ -1953,3 +1953,43 @@
 #         averages = []
 #         findSum(root)
 #         return max(averages)
+
+
+
+
+
+# !!!!NOT THE CORRECT SOLUTION!!!
+# 250. Count Univalue Subtrees
+
+#     def countUnivalSubtrees(self, root: Optional[TreeNode]) -> int:
+
+#         def bfs(uni, node):
+#             if not node:
+#                 return True
+#             if uni != node.val:
+#                 return False
+#             left = bfs(uni, node.left)
+#             right = bfs(uni, node.right)
+#             return left and right
+
+
+
+#         def helper(node):
+#             if not node:
+#                 return -1
+
+#             if not node.left and not node.right:
+#                 self.count += 1
+#                 return node.val
+
+#             left = helper(node.left)
+#             right = helper(node.right)
+
+#             if left == right:
+#                 if bfs(left, node.left) and bfs(right, node.right):
+#                     self.count += 1
+
+#             return node.val
+
+#         helper(root)
+#         return self.count
