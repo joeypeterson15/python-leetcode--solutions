@@ -1993,3 +1993,34 @@
 
 #         helper(root)
 #         return self.count
+
+
+
+56. Merge Intervals
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+
+        intervals.sort(key=lambda x: x[0])
+        res = []
+
+        for interval in intervals:
+            if not res or res[-1][1] < interval[0]:
+                res.append(interval)
+            else:
+                res[-1][1] = max(interval[1], res[-1][1])
+
+        return res
+
+# Meeting Rooms
+# class Solution:
+#     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+# #         need to find if any of the intervals overlap. If any overlap return false
+
+#         intervals.sort(key=lambda i: i[0])
+#         # res = []
+
+#         for i in range(len(intervals)):
+#             if (i + 1) in range(len(intervals)) and intervals[i][1] > intervals[i + 1][0]:
+#                 return False
+
+#         return True
