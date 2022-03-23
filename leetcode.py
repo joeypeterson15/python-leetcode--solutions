@@ -2059,3 +2059,29 @@
 
 #         # The size of the heap tells us the minimum rooms required for all the meetings.
 #         return len(free_rooms)
+
+
+# 7. Reverse Integer
+# class Solution:
+#     def reverse(self, x: int) -> int:
+#         if x == 0:
+#             return 0
+
+#         string = str(x)
+
+#         isNeg = False
+
+#         if x < 0:
+#             isNeg = True
+#             string = string[1:]
+
+#         revStr = string[::-1]
+#         while revStr[0] == '0':
+#             revStr = revStr[1:]
+#         if isNeg:
+#             revStr = '-' + revStr
+
+#         newNum = int(revStr)
+#         if newNum > 2 ** 31 or newNum < -2**31:
+#             return 0
+#         return newNum
