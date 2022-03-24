@@ -2160,3 +2160,22 @@
 
 #         # Return value stored in rightmost bottommost cell. That is the destination.
 #         return obstacleGrid[m-1][n-1]
+
+
+
+
+# 881. Boats to Save People
+# class Solution:
+#     def numRescueBoats(self, people: List[int], limit: int) -> int:
+#         people = sorted(people)
+#         lo = 0
+#         hi = len(people)-1
+#         boats = 0
+#         while lo <= hi:
+#             if people[lo] + people[hi] <= limit:
+#                 lo += 1
+#                 hi -= 1
+#             else:
+#                 hi -= 1
+#             boats += 1
+#         return boats
