@@ -2228,3 +2228,28 @@
 #             curr_sum = findTwoSums(nums, lo, new_target)
 #             num_sums += curr_sum
 #         return num_sums
+
+
+
+
+# 16. 3Sum Closest
+# class Solution:
+#     def threeSumClosest(self, nums: List[int], target: int) -> int:
+#         diff = float('inf')
+#         nums.sort()
+
+#         for i in range(len(nums)):
+#             lo = i + 1
+#             hi = len(nums) - 1
+#             while lo < hi:
+#                 curr_sum = nums[i] + nums[lo] + nums[hi]
+#                 if abs(target - curr_sum) < abs(diff):
+#                     diff = target - curr_sum
+#                 if curr_sum < target:
+#                     lo += 1
+#                 else:
+#                     hi -= 1
+#                 if diff == 0:
+#                     break
+
+#         return target - diff
