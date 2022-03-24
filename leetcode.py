@@ -2201,3 +2201,30 @@
 #                 hi -= 1
 
 #         return ans
+
+
+
+# 259. 3Sum Smaller
+# class Solution:
+#     def threeSumSmaller(self, nums: List[int], target: int) -> int:
+#         nums.sort()
+#         num_sums = 0
+
+#         def findTwoSums(nums, lo, new_target):
+#             sum = 0
+#             hi = len(nums) - 1
+#             while lo <= hi:
+#                 if nums[lo] + nums[hi] < new_target:
+#                     sum += hi - lo
+#                     lo += 1
+#                 else:
+#                     hi -= 1
+#             return sum
+
+
+#         for i in range(len(nums) - 2):
+#             lo = i + 1
+#             new_target = target - nums[i]
+#             curr_sum = findTwoSums(nums, lo, new_target)
+#             num_sums += curr_sum
+#         return num_sums
