@@ -2179,3 +2179,25 @@
 #                 hi -= 1
 #             boats += 1
 #         return boats
+
+
+
+
+
+# 1099. Two Sum Less Than K
+# class Solution:
+#     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+#         ans = -1
+#         nums.sort()
+#         lo = 0
+#         hi = len(nums) - 1
+
+#         while lo < hi:
+#             curr_sum = nums[lo] + nums[hi]
+#             if curr_sum < k:
+#                 ans = max(ans, curr_sum)
+#                 lo += 1
+#             else:
+#                 hi -= 1
+
+#         return ans
