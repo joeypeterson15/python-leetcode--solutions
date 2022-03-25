@@ -2258,28 +2258,30 @@
 
 
 # 1257. Smallest Common Region
-# class Solution:
-#     def __init__(self):
-#         self.graph = None
-#         self.region = None
-#     def findSmallestRegion(self, regions: List[List[str]], region1: str, region2: str) -> str:
+class Solution:
+    def __init__(self):
+        self.ans = None
+        self.hash_regions = None
+    def findSmallestRegion(self, regions: List[List[str]], region1: str, region2: str) -> str:
+        self.hash_regions = defaultdict(list)
 
-#         self.graph = defaultdict(list)
-#         for regionlist in regions:
-#             self.graph[regionlist[0]] = regionlist[1:]
+        for region in regions:
+            self.hash_regions[region[0]] = region[1:]
 
-#         def Search(current, region1: str, region2: str):
-#             if current:
+        def findLowestCommonRegion(reg, region1, region2):
+            if not reg:
+                return False
 
-#                 check = []
-#                 for i in self.graph[current]:
-#                     check.append(Search(i, region1, region2))
-#                 mid = current == region1 or current == region2
-#                 if mid + sum(check) >= 2:
-#                     self.region = current
-#                 return mid or any(check)
-#             else:
-#                 return False
-#         start = regions[0][0]
-#         Search(start, region1, region2)
-#         return self.region
+            check = []
+            for region in self.hash_regions[reg]:
+                check.append(findLowestCommonRegion(region, region1, region2))
+
+            curr_region = reg == region1 or reg == region2
+
+            if curr_region + sum(check) >= 2:
+                self.ans = reg
+
+            return curr_region or any(check)
+
+        findLowestCommonRegion(regions[0][0], region1, region2)
+        return self.ans
