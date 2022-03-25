@@ -2253,3 +2253,33 @@
 #                     break
 
 #         return target - diff
+
+
+
+
+1257. Smallest Common Region
+class Solution:
+    def __init__(self):
+        self.graph = None
+        self.region = None
+    def findSmallestRegion(self, regions: List[List[str]], region1: str, region2: str) -> str:
+
+        self.graph = defaultdict(list)
+        for regionlist in regions:
+            self.graph[regionlist[0]] = regionlist[1:]
+
+        def Search(current, region1: str, region2: str):
+            if current:
+
+                check = []
+                for i in self.graph[current]:
+                    check.append(Search(i, region1, region2))
+                mid = current == region1 or current == region2
+                if mid + sum(check) >= 2:
+                    self.region = current
+                return mid or any(check)
+            else:
+                return False
+        start = regions[0][0]
+        Search(start, region1, region2)
+        return self.region
