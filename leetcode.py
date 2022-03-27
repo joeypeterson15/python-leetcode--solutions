@@ -2418,3 +2418,16 @@
 #         for k, v in counter.items():
 #             if v == 1:
 #                 return k
+
+
+
+
+# 169. Majority Element
+# class Solution:
+#     def majorityElement(self, nums: List[int]) -> int:
+#         counter = defaultdict(int)
+#         length = len(nums)
+#         for n in nums:
+#             counter[n] += 1
+#             if counter[n] > length // 2:
+#                 return n
