@@ -2365,3 +2365,44 @@
 #                     else:
 #                         return True
 #         return False
+
+
+
+# 2089. Find Target Indices After Sorting Array
+# class Solution:
+#     def targetIndices(self, nums: List[int], target: int) -> List[int]:
+#         nums.sort()
+#         res = []
+#         for i, n in enumerate(nums):
+#             if n == target:
+#                 res.append(i)
+#         return res
+
+
+
+
+# 1331. Rank Transform of an Array
+# class Solution:
+#     def arrayRankTransform(self, arr: List[int]) -> List[int]:
+
+#         length = len(arr)
+
+#         trackIndex = defaultdict(set)
+
+#         res = [None for _ in range(length)]
+
+#         for i in range(length):
+#             trackIndex[arr[i]].add(i)
+
+#         arr.sort()
+#         rank = 1
+#         i = 0
+#         while i < length:
+#             for j in trackIndex[arr[i]]:
+#                 res[j] = rank
+#             while (i + 1) in range(length) and arr[i + 1] == arr[i]:
+#                 i += 1
+#             i += 1
+#             rank += 1
+
+#         return res
