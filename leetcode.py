@@ -2344,3 +2344,24 @@
 #                 return mid
 
 #         return -1
+
+
+# 74. Search a 2D Matrix
+# class Solution:
+#     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+#         rows = len(matrix)
+#         cols = len(matrix[0])
+
+#         for r in range(rows):
+#             if matrix[r][0] <= target <= matrix[r][cols - 1]:
+#                 lo = 0
+#                 hi = cols - 1
+#                 while lo <= hi:
+#                     mid = (lo + hi) // 2
+#                     if matrix[r][mid] < target:
+#                         lo = mid + 1
+#                     elif matrix[r][mid] > target:
+#                         hi = mid - 1
+#                     else:
+#                         return True
+#         return False
