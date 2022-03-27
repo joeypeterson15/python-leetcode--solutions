@@ -2313,3 +2313,34 @@
 #                 res.append(hi)
 #                 return res
 #         return [-1, -1]
+
+
+
+# 33. Search in Rotated Sorted Array
+# class Solution:
+#     def search(self, nums: List[int], target: int) -> int:
+#         lo = 0
+#         hi = len(nums) - 1
+#         inBeginRange = False
+#         if target >= nums[0]:
+#             inBeginRange = True
+
+
+#         while lo <= hi:
+#             if inBeginRange:
+#                 while nums[hi] < nums[lo]:
+#                     hi -= 1
+#             else:
+#                 while nums[hi] < nums[lo]:
+#                     lo += 1
+
+#             mid = (lo + hi) // 2
+
+#             if nums[mid] > target:
+#                 hi = mid - 1
+#             elif nums[mid] < target:
+#                 lo = mid + 1
+#             else:
+#                 return mid
+
+#         return -1
