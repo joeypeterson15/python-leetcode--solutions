@@ -2285,3 +2285,31 @@
 
 #         findLowestCommonRegion(regions[0][0], region1, region2)
 #         return self.ans
+
+
+
+# 34. Find First and Last Position of Element in Sorted Array
+# class Solution:
+#     def searchRange(self, nums: List[int], target: int) -> List[int]:
+
+#         lo = 0
+#         hi = len(nums) - 1
+#         res = []
+#         while lo <= hi:
+#             mid = (lo + hi) // 2
+
+#             if nums[mid] < target:
+#                 lo = mid + 1
+#             if nums[mid] > target:
+#                 hi = mid - 1
+#             if nums[mid] == target:
+#                 lo = mid
+#                 hi = mid
+#                 while lo - 1 in range(len(nums)) and nums[lo - 1] == target:
+#                     lo -= 1
+#                 res.insert(1, lo)
+#                 while hi + 1 in range(len(nums)) and nums[hi + 1] == target:
+#                     hi += 1
+#                 res.append(hi)
+#                 return res
+#         return [-1, -1]
