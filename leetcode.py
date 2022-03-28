@@ -2431,3 +2431,41 @@
 #             counter[n] += 1
 #             if counter[n] > length // 2:
 #                 return n
+
+
+# 27. Remove Element
+# class Solution:
+#     def removeElement(self, nums: List[int], val: int) -> int:
+#         i = 0
+#         length = len(nums)
+#         for j in range(length):
+#             if nums[j] != val:
+#                 nums[i] = nums[j]
+#                 i += 1
+
+#         return i
+
+
+
+# 203. Remove Linked List Elements
+# # Definition for singly-linked list.
+# # class ListNode:
+# #     def __init__(self, val=0, next=None):
+# #         self.val = val
+# #         self.next = next
+# class Solution:
+#     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+#         sentinal = ListNode(0)
+#         sentinal.next = head
+
+#         curr = head
+#         prev = sentinal
+
+#         while curr:
+#             if curr.val == val:
+#                 prev.next = curr.next
+#             else:
+#                 prev = curr
+#             curr = curr.next
+
+#         return sentinal.next
