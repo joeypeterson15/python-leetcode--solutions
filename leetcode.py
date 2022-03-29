@@ -396,6 +396,9 @@
 
 
 
+
+
+
 # Allie Villarreal (she/her) to Everyone (11:43 AM)
 # function getFileExtension(i) {
 #  // i will be a string, but it may not have a file extension.
@@ -2573,3 +2576,22 @@
 #             currRow.append(prevRow[i] + prevRow[i + 1])
 #         currRow.append(1)
 #         return currRow
+
+
+# 118. Pascal's Triangle
+# class Solution:
+#     def generate(self, numRows: int) -> List[List[int]]:
+#         res = [[1], [1,1]]
+#         if numRows == 1:
+#             return [res[0]]
+#         if numRows == 2:
+#             return res
+
+#         for i in range(2, numRows):
+#             curr_row = [1]
+#             for j in range(len(res[i - 1]) - 1):
+#                 sum = res[i - 1][j] + res[i - 1][j + 1]
+#                 curr_row.append(sum)
+#             curr_row.append(1)
+#             res.append(curr_row)
+#         return res
