@@ -2692,3 +2692,21 @@
 #         new_str2 = backSpace(t)
 
 #         return new_str1 == new_str2
+
+
+
+# 240. Search a 2D Matrix II
+# class Solution:
+#     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+#         rows = len(matrix)
+#         cols = len(matrix[0])
+
+#         for i in range(rows):
+
+#             if matrix[i][0] <= target <= matrix[i][cols - 1]:
+
+#                 for j in range(cols):
+#                     if matrix[i][j] == target:
+#                         return True
+
+#         return False
