@@ -2669,3 +2669,26 @@
 #                 prev = curr
 #                 curr = curr.next
 #         return sentinel.next
+
+
+
+
+
+# 844. Backspace String Compare
+# class Solution:
+#     def backspaceCompare(self, s: str, t: str) -> bool:
+
+#         def backSpace(string):
+#             stack = []
+#             for s in string:
+#                 if s != '#':
+#                     stack.append(s)
+#                 else:
+#                     if len(stack) > 0:
+#                         stack.pop()
+#             return "".join(stack)
+
+#         new_str1 = backSpace(s)
+#         new_str2 = backSpace(t)
+
+#         return new_str1 == new_str2
