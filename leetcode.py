@@ -2626,3 +2626,46 @@
 #         arr.sort()
 
 #         return target == arr
+
+
+
+
+# 1836. Remove Duplicates From an Unsorted Linked List
+# class Solution:
+#     def deleteDuplicatesUnsorted(self, head: ListNode) -> ListNode:
+#         counter = defaultdict(int)
+#         curr = head
+#         while curr:
+#             counter[curr.val] += 1
+#             curr = curr.next
+
+#         sentinel = ListNode(0, head)
+#         prev = sentinel
+#         curr = head
+#         while curr:
+#             if counter[curr.val] >= 2:
+#                 prev.next = curr.next
+#             else:
+#                 prev = curr
+#             curr = curr.next
+
+#         return sentinel.next
+
+
+
+
+# 83. Remove Duplicates from Sorted List
+# class Solution:
+#     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         sentinel = ListNode(0, head)
+#         curr = head
+#         prev = sentinel
+#         while curr:
+#             if curr.next and curr.next.val == curr.val:
+#                 while curr.next and curr.next.val == curr.val:
+#                     prev.next = curr.next
+#                     curr = curr.next
+#             else:
+#                 prev = curr
+#                 curr = curr.next
+#         return sentinel.next
