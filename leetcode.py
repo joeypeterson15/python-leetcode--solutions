@@ -377,7 +377,26 @@
 
 
 # 48. Rotate Image
+
 # You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+# class Solution:
+#     def rotate(self, matrix: List[List[int]]) -> None:
+#         self.transpose(matrix)
+#         self.reflect(matrix)
+
+#     def transpose(self, matrix):
+#         n = len(matrix)
+#         for i in range(n):
+#             for j in range(i + 1, n):
+#                 matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+
+#     def reflect(self, matrix):
+#         n = len(matrix)
+#         for i in range(n):
+#             for j in range(n // 2):
+#                 matrix[i][j], matrix[i][-j - 1] = matrix[i][-j - 1], matrix[i][j]
+
+
 # class Solution:
 #     def rotate(self, matrix: List[List[int]]) -> None:
 #         n = len(matrix[0])
@@ -2595,3 +2614,15 @@
 #             curr_row.append(1)
 #             res.append(curr_row)
 #         return res
+
+
+
+
+
+# 1460. Make Two Arrays Equal by Reversing Sub-arrays
+# class Solution:
+#     def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+#         target.sort()
+#         arr.sort()
+
+#         return target == arr
