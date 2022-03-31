@@ -2743,3 +2743,12 @@
 # from Employee as a, Employee as b
 # where a.managerId = b.id
 # AND a.salary > b.salary
+
+
+
+# 176. Second Highest Salary
+# SELECT
+# (Select distinct Employee.salary
+# from Employee
+# ORDER BY Employee.salary desc
+# Limit 1 offset 1) as 'SecondHighestSalary'
