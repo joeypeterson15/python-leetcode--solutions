@@ -2752,3 +2752,11 @@
 # from Employee
 # ORDER BY Employee.salary desc
 # Limit 1 offset 1) as 'SecondHighestSalary'
+
+
+# 1303. Find the Team Size
+# SELECT
+#     employee_id,
+#     (SELECT COUNT(team_id) FROM Employee e WHERE e.team_id = ee.team_id) as team_size
+# FROM Employee as ee
+# GROUP BY employee_id
