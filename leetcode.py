@@ -2732,6 +2732,6 @@
 
 
 # 1350. Students With Invalid Departments
-# SELECT s.id, s.name FROM Students s
-# LEFT JOIN Departments d ON s.department_id = d.id
-# WHERE d.id is null
+# SELECT Students.id, Students.name FROM Students
+# LEFT JOIN Departments ON (Students.department_id = Departments.id)
+# WHERE Departments.id IS NULL
