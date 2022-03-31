@@ -2735,3 +2735,11 @@
 # SELECT Students.id, Students.name FROM Students
 # LEFT JOIN Departments ON (Students.department_id = Departments.id)
 # WHERE Departments.id IS NULL
+
+
+
+# 181. Employees Earning More Than Their Managers
+# select a.name as 'Employee'
+# from Employee as a, Employee as b
+# where a.managerId = b.id
+# AND a.salary > b.salary
