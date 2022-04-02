@@ -2760,3 +2760,29 @@
 #     (SELECT COUNT(team_id) FROM Employee e WHERE e.team_id = ee.team_id) as team_size
 # FROM Employee as ee
 # GROUP BY employee_id
+
+
+
+
+# 39. Combination Sum
+# class Solution:
+#     # def __init__(self):
+#     #     # self.results = []
+
+#     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+
+#         results = []
+#         def backtracker(index, remaining, comb):
+#             if remaining == 0:
+#                 results.append(list(comb))
+#                 return
+#             elif remaining < 0:
+#                 return
+
+#             for i in range(index, len(candidates)):
+#                 comb.append(candidates[i])
+#                 backtracker(i, remaining - candidates[i], comb)
+#                 comb.pop()
+
+#         backtracker(0, target, [])
+#         return results
