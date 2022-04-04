@@ -2786,3 +2786,26 @@
 
 #         backtracker(0, target, [])
 #         return results
+
+
+
+
+
+# 222. Count Complete Tree Nodes
+# class Solution:
+#     # def __init__(self):
+#     #     self.count = 0
+
+#     def countNodes(self, root: Optional[TreeNode]) -> int:
+
+#         def helper(node):
+#             if not node:
+#                 return 0
+#             if not node.left and not node.right:
+#                 return 1
+#             left = helper(node.left)
+#             right = helper(node.right)
+
+#             return 1 + left + right
+
+#         return helper(root)
