@@ -2812,10 +2812,16 @@
 
 
 
-
-
 # 182. Duplicate Emails
 # select Email
 # from Person
 # group by Email
 # having count(Email) > 1
+
+
+
+# 183. Customers Who Never Order
+# select customers.name as Customers
+# from customers
+# left join orders on (orders.customerId = customers.id)
+# where orders.customerId is null
