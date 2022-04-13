@@ -2964,3 +2964,27 @@
 #                     return True
 
 #         return False
+
+
+
+
+# 1209. Remove All Adjacent Duplicates in String II
+# class Solution:
+#     def removeDuplicates(self, s: str, k: int) -> str:
+
+#         stack = [[s[0], 1]]
+
+#         for index in range(1, len(s)):
+#             if stack and s[index] == stack[-1][0]:
+#                 stack[-1][1] += 1
+
+#                 if stack[-1][1] == k:
+#                     stack.pop()
+#             else:
+#                 stack.append([s[index], 1])
+
+#         answer = ""
+#         for letter, count in stack:
+#             answer += letter * count
+
+#         return answer
