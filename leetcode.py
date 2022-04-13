@@ -2922,8 +2922,7 @@
 #         return res.values()
 
 
-
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        return sorted(s) == sorted(t)
-        
+# 242. Valid Anagram
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         return sorted(s) == sorted(t)
