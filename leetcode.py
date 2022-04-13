@@ -2907,3 +2907,23 @@
 #             # e.g. "a" * 4 -> "aaaa"
 #             string_builder.append(letter * freq)
 #         return "".join(string_builder)
+
+
+# 49. Group Anagrams
+# class Solution:
+#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+#         res = collections.defaultdict(list)
+
+
+#         for word in strs:
+#             res[tuple(sorted(word))].append(word)
+
+#         return res.values()
+
+
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+        
