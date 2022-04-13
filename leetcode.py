@@ -2945,3 +2945,22 @@
 #                     res.append(i)
 
 #         return res
+
+
+
+# 567. Permutation in String
+# class Solution:
+#     def checkInclusion(self, s1: str, s2: str) -> bool:
+
+#         s1_sorted = sorted(s1)
+#         s1_length = len(s1)
+#         s2_length = len(s2)
+
+#         for i in range(s2_length):
+#             if s2[i] in s1 and (i + s1_length - 1) in range(s2_length):
+#                 curr = s2[i: i + s1_length]
+#                 curr_sorted = sorted(curr)
+#                 if curr_sorted == s1_sorted:
+#                     return True
+
+#         return False
