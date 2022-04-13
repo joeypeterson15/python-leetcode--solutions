@@ -2926,3 +2926,22 @@
 # class Solution:
 #     def isAnagram(self, s: str, t: str) -> bool:
 #         return sorted(s) == sorted(t)
+
+
+
+# 438. Find All Anagrams in a String
+# class Solution:
+#     def findAnagrams(self, s: str, p: str) -> List[int]:
+
+#         res = []
+#         p = sorted(p)
+#         p_length = len(p)
+
+#         for i in range(len(s)):
+#             if s[i] in p and (i + p_length - 1) in range(len(s)):
+#                 curr_check = s[i: i + p_length]
+#                 sorted_curr_check = sorted(curr_check)
+#                 if sorted_curr_check == p:
+#                     res.append(i)
+
+#         return res
