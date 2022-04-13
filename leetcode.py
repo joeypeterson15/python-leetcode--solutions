@@ -2968,6 +2968,31 @@
 
 
 
+# 1047. Remove All Adjacent Duplicates In String
+# class Solution:
+#     def removeDuplicates(self, s: str) -> str:
+
+#         stack = [[s[0], 1]]
+
+#         for index in range(1, len(s)):
+#             if stack and stack[-1][0] == s[index]:
+#                 stack[-1][1] += 1
+
+#                 if stack[-1][1] == 2:
+#                     stack.pop()
+#             else:
+#                 stack.append([s[index], 1])
+#         answer = ""
+#         for letter, frequency in stack:
+#             answer += letter * frequency
+
+#         return answer
+
+
+
+
+
+
 # 1209. Remove All Adjacent Duplicates in String II
 # class Solution:
 #     def removeDuplicates(self, s: str, k: int) -> str:
