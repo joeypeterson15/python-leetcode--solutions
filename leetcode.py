@@ -3013,3 +3013,25 @@
 #             answer += letter * count
 
 #         return answer
+
+
+
+
+# 1190. Reverse Substrings Between Each Pair of Parentheses
+# class Solution:
+#     def reverseParentheses(self, string: str) -> str:
+
+#         stack = []
+
+#         for character in string:
+#             if character == ')':
+#                 temp = ''
+#                 while stack and stack[-1] != '(':
+#                     temp += stack.pop()
+#                 stack.pop()
+#                 for letter in temp:
+#                     stack.append(letter)
+#             else:
+#                 stack.append(character)
+
+#         return "".join(stack)
