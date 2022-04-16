@@ -3096,3 +3096,38 @@
 #         elif curr2.val < curr1.val:
 #             curr2.next = self.mergeTwoLists(curr1, curr2.next)
 #             return curr2
+
+
+
+# 538. Convert BST to Greater Tree
+# class Solution:
+#     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+# #         do an in order traversal of the tree
+# #         make a new list that sums every number after it plus the current number
+# #         walk through the tree again and on each iteration add in new number
+
+#         def inorder(node):
+#             if not node:
+#                 return
+#             inorder(node.left)
+#             inOrderVals.append(node.val)
+#             inorder(node.right)
+
+#         def changeNodeVals(node, newVals):
+#             if not node:
+#                 return
+#             changeNodeVals(node.left, newVals)
+#             node.val = newVals[-1]
+#             newVals.pop()
+#             changeNodeVals(node.right, newVals)
+
+#         inOrderVals = []
+#         inorder(root)
+#         newVals = []
+#         for i in range(len(inOrderVals)):
+#             newVals.append(sum(inOrderVals[i:]))
+
+#         newVals = newVals[::-1]
+#         changeNodeVals(root, newVals)
+
+#         return root
