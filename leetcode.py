@@ -3147,3 +3147,30 @@
 #             elif k == 0 and counter[num] > 1:
 #                 count += 1
 #         return count
+
+
+
+# 733. Flood Fill
+# class Solution:
+#     def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+#         rows = len(image)
+#         cols = len(image[0])
+#         directions = [(0,1), (0, -1), (1, 0), (-1, 0)]
+#         queue = collections.deque()
+#         queue.append((sr, sc))
+#         visited = set((sr, sc))
+#         startColor = image[sr][sc]
+
+
+#         while queue:
+#             row, col = queue.popleft()
+#             image[row][col] = newColor
+
+#             for dr, dc in directions:
+#                 dy = dr + row
+#                 dx = dc + col
+#                 if (dy in range(rows) and dx in range(cols) and (dy, dx) not in visited and image[dy][dx] == startColor):
+#                     queue.append((dy, dx))
+#                     visited.add((dy, dx))
+
+#         return image
