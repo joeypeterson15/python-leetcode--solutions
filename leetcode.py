@@ -3174,3 +3174,32 @@
 #                     visited.add((dy, dx))
 
 #         return image
+
+
+
+
+# class Solution:
+#     def setZeroes(self, matrix: List[List[int]]) -> None:
+#         """
+#         Do not return anything, modify matrix in-place instead.
+#         """
+#         rows = len(matrix)
+#         cols = len(matrix[0])
+#         changed = set()
+
+#         def zero(row, col):
+#             for r in range(rows):
+#                 if matrix[r][col] != 0:
+#                     matrix[r][col] = 0
+#                     changed.add((r, col))
+#             for c in range(cols):
+#                 if matrix[row][c] != 0:
+#                     matrix[row][c] = 0
+#                     changed.add((row, c))
+
+#         for row in range(rows):
+#             for col in range(cols):
+#                 if matrix[row][col] == 0 and (row,col) not in changed:
+#                     zero(row, col)
+
+#         return matrix
